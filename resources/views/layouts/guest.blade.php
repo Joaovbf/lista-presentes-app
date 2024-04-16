@@ -1,30 +1,88 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Lista de Presentes - A & J</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span class="symbol"><img src="{{ asset('image/logo.svg') }}" alt="" style="width: 3.5em"/></span><span class="title">Lista de presentes</span>
+            </a>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+            <!-- Nav -->
+{{--            <nav>--}}
+{{--                <ul>--}}
+{{--                    <li><a href="#menu">Menu</a></li>--}}
+{{--                </ul>--}}
+{{--            </nav>--}}
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
         </div>
-    </body>
+    </header>
+
+    <!-- Menu -->
+{{--    <nav id="menu">--}}
+{{--        <h2>Menu</h2>--}}
+{{--        <ul>--}}
+{{--            <li><a href="index.html">Home</a></li>--}}
+{{--            <li><a href="generic.html">Ipsum veroeros</a></li>--}}
+{{--            <li><a href="generic.html">Tempus etiam</a></li>--}}
+{{--            <li><a href="generic.html">Consequat dolor</a></li>--}}
+{{--            <li><a href="elements.html">Elements</a></li>--}}
+{{--        </ul>--}}
+{{--    </nav>--}}
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            {{ $slot }}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <section>
+                <h2>Chave PIX</h2>
+                <div>
+                    <p>
+                        <img src="{{ asset('image/chave-pix.jpeg') }}" alt="Chave Pix" class="image left" style="width: 15em">
+                        <b>Banco:</b> C6 Bank <br>
+                        <b>Nome: </b> JOÃO VITOR BARROS FARIAS <br>
+                        SERIA LEGAL ESCREVER ALGUMA COISA BACANA AQUI <b>@ANA</b> DÁ UMA FORÇA PRA GENTE AQUI
+
+                    </p>
+                </div>
+            </section>
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/browser.min.js') }}"></script>
+<script src="{{ asset('assets/js/breakpoints.min.js') }}"></script>
+<script src="{{ asset('assets/js/util.js') }}"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
+
+</body>
 </html>
