@@ -1,0 +1,5 @@
+.main-title {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: gray;
+    color: #dddddd;
+}

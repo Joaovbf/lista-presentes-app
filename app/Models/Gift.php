@@ -9,8 +9,9 @@ class Gift extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'name',
         'description',
-        'link',
+        'path_image',
         'quotas',
         'value'
     ];

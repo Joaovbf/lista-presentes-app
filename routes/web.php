@@ -6,7 +6,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GiftController::class, 'index']);
-Route::get('/item/{giftId}', [GiftController::class, 'get']);
+Route::get('/item/{giftId}', [GiftController::class, 'get'])->name('item-description');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 

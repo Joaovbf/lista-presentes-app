@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('gifts', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('description');
-            $table->string('link');
             $table->string('path_image');
             $table->integer('quotas');
             $table->double('value');
