@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('path_image');
+            $table->string('path_image')->nullable();
             $table->integer('quotas');
             $table->double('value');
             $table->timestamps();

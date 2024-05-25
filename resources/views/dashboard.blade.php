@@ -5,7 +5,7 @@
                 {{ __('Dashboard') }}
             </h2>
             <div>
-                <x-primary-button>
+                <x-primary-button :href="route('item.create')">
                     {{ __('Adicionar presente') }}
                 </x-primary-button>
             </div>
@@ -19,26 +19,27 @@
                     <h2 class="pb-3 font-semibold text-xl text-gray-800 leading-tight">
                         {{ __('Lista de presentes') }}
                     </h2>
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                        <tr>
-                            <th>Descrição</th>
-                            <th>Cotas</th>
-                            <th>Valor</th>
-                            <th>Ações</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                    <ul role="list" class="divide-y divide-gray-100">
+
                         @foreach($gifts as $gift)
-                            <tr>
-                                <td>{{ $gift->description }}</td>
-                                <td>{{ $gift->quotas }}</td>
-                                <td>{{ $gift->value }}</td>
-                                <td>Editar</td>
-                            </tr>
+                            <li class="flex justify-between gap-x-6 py-5">
+                                <div class="flex min-w-0 gap-x-4">
+                                    <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="{{ $gift->path_image ?: asset('image/imagem-presente.jpeg')  }}" alt="">
+                                    <div class="min-w-0 flex-auto">
+                                        <p class="text-sm font-semibold leading-6 text-gray-900">{{ $gift->name }}</p>
+                                        <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+                                            {{ $gift->description }}</p>
+                                    </div>
+                                </div>
+                                <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                                    <p class="text-sm leading-6 text-gray-900">Cotas: {{ $gift->quotas }}</p>
+                                    <x-primary-button :href="route('item.edit', $gift->id)">
+                                        Editar Presente
+                                    </x-primary-button>
+                                </div>
+                            </li>
                         @endforeach
-                        </tbody>
-                    </table>
+                    </ul>
 
                 </div>
             </div>

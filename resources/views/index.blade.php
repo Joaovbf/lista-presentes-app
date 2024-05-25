@@ -9,7 +9,7 @@
             <span class="image">
                 <img src="{{ asset('image/imagem-presente.jpeg') }}" alt="" />
             </span>
-                <a href="{{ route('item-description', ['giftId' => $gift->id]) }}">
+                <a href="{{ route('item.description', ['giftId' => $gift->id]) }}">
                     <h2 class="main-title">{{$gift->name}}</h2>
                     <div class="content">
                         <p>{{$gift->description}}</p>
