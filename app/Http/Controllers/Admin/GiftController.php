@@ -63,6 +63,6 @@ class GiftController extends Controller
     {
         $deleted = $gift->delete();
 
-        return Response::json(['deleted' => $deleted]);
+        return redirect()->route('dashboard');
     }
 }
